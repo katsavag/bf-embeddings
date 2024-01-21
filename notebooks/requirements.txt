@@ -1,0 +1,4 @@
+redis
+grpcio-tools
+
+python -m grpc_tools.protoc --python_out=./python_proto --grpc_python_out=./python_proto embeddings.proto
