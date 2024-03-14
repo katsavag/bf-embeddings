@@ -158,3 +158,7 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+knowledge_discovery_service/src/main/generated
+vector_search_service/protos/service_pb2.py
+vector_search_service/protos/service_pb2_grpc.py

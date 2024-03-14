@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+// ======================================== Services
+service VectorSearchService {
+  rpc SearchVector(SimilaritySearchRequest) returns (SimilaritySearchResponse) {}
+  rpc ProcessEmbeddings(EmbeddingsRequest) returns (EmbeddingsResponse) {}
+  rpc CreateCollection(CreateCollectionRequest) returns (Void) {}
+  rpc CreateKnowledgeVector(KnowledgeCreationRequest) returns (Void){}
+}
+
+// ======================================= Requests and Responses messages
+message CreateCollectionRequest {
+  string text = 1;
+}
+
+message SimilaritySearchRequest {
+  string searchText = 1;
+}
+
+message KnowledgeCreationRequest {
+  string text = 1;
+}
+
+message SimilaritySearchResponse {
+  repeated VectorEntry entries = 1;
+}
+
+message EmbeddingsRequest {
+  string text = 1;
+}
+
+message  EmbeddingsResponse {
+  string text = 1;
+  repeated float embeddings = 2;
+}
+
+message  VectorEntry {
+  string paperTitle = 1;
+  string text = 2;
+  float score = 3;
+}
+
+message Void {}

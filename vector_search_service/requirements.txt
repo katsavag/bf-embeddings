@@ -1,0 +1,5 @@
+qdrant-client==1.7.3
+grpcio==1.60.1
+pandas~=2.2.0
+sentence-transformers==2.2.2
+pydantic~=2.6.1

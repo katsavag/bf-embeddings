@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_package = "com.katsadourose.remote_services";
+option java_outer_classname = "SimilaritySearchProto";
+
+// ======================================== Services
+service VectorSearchService {
+  rpc SearchVector(SimilaritySearchRequest) returns (SimilaritySearchResponse) {}
+  rpc ProcessEmbeddings(EmbeddingsRequest) returns (EmbeddingsResponse) {}
+
+}
+
+// ======================================= Requests and Responses messages
+message SimilaritySearchRequest {
+  string searchText = 1;
+}
+
+message SimilaritySearchResponse {
+  repeated VectorEntry entries = 1;
+}
+
+message EmbeddingsRequest {
+  string text = 1;
+}
+
+message  EmbeddingsResponse {
+  string text = 1;
+  repeated float embeddings = 2;
+}
+
+message  VectorEntry {
+  string paperTitle = 1;
+  string text = 2;
+  float score = 3;
+}
